@@ -14,14 +14,16 @@
         age: 20,
         moyenne: 15
     }
-    if (marc.age >= 18) {
+    if (mohamed.age >= 18) {
         console.log('Tu peux passer ton permis !')
-    } else if (marc.age >= 15) {
+    } else if (mohamed.age >= 15) {
         console.log('Tu peux passer la conduite accompagnée')
-    } else if (marc.age >= 18 && marc.age <= 25) {
+    } else if (mohamed.age >= 18 && mohamed.age <= 25) {
         console.log('Tu as droit au tarif jeune')
     } else {
         console.log('Tu ne peux pas passer ton permis')
     }
+    // Ternaire: condition ? valide : non-valide
+    console.log(mohamed.age >= 18 ? 'tu es majeur' : 'tu es mineur')
 </script>
 </html>
