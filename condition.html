@@ -11,11 +11,15 @@
 <script>
     var marc = {
         nom: 'mohamed',
-        age: 18,
+        age: 16,
         moyenne: 15
     }
     if (marc.age >= 18) {
-        console.log('Tu es majeur !')
+        console.log('Tu peux passer ton permis !')
+    } else if (marc.age >= 15) {
+        console.log('Tu peux passer la conduite accompagnée')
+    } else {
+        console.log('Tu ne peux pas passer ton permis')
     }
 </script>
 </html>
