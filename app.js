@@ -8,3 +8,7 @@ var eleve = ['jean', 'momo', 'kevin']
 var eleve = {nom: 'momo', age: 34, moyenne: 14}
 eleve.nom // momo
 eleve.age // 34
+//pour ajouter une propriété
+eleve.taille = 180
+
+// En js, tous est objet
