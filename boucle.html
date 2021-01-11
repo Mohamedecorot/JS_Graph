@@ -9,11 +9,20 @@
 
 </body>
 <script>
-    var eleves = ['Jean', 'Marc', 'Mohamed']
-    for (var i = 0; i < eleves.length; i++) {
-        console.log('Bonjour ' + eleves[i]);
+    var nombre = 97
+    var estPremier = true
+    for (var i = 2; i < nombre; i++) {
+        if (nombre % i === 0) {
+            estPremier = false
+            console.log("ce nombre n'est pas premier")
+            console.log(nombre + ' est divisible par ' + i)
+            break
+        }
     }
 
+    if(estPremier) {
+        console.log(nombre + ' est premier')
+    }
 
 </script>
 </html>
