@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boucle</title>
+</head>
+<body>
+
+</body>
+<script>
+    var nombre = 97
+
+    function estPremier(nombre) {
+        for (var i = 2; i < nombre; i++) {
+            if (nombre % i === 0) {
+                return false
+            }
+        }
+        return true
+    }
+
+    function multiplie(a, b) {
+        return a * b
+    }
+
+
+
+    var eleves = [{
+        nom: 'Marc',
+        moyenne: 15
+    }, {
+        nom: 'Marion',
+        moyenne: 8
+    }, {
+        nom: 'Antoine',
+        moyenne: 4
+    }]
+
+    for (var i = 0; i < eleves.length; i++) {
+        var eleve = eleves[i]
+        if (eleve.moyenne < 10) {
+            console.log(eleve.nom + " n'a pas la moyenne")
+        } else {
+            console.log(eleve.nom + " a la moyenne")
+        }
+    }
+
+
+</script>
+</html>
