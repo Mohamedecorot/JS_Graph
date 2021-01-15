@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Boucle</title>
+    <title>Functions</title>
 </head>
 <body>
 
@@ -21,12 +21,15 @@
     }
 
     function multiplie(a, b) {
+        if (b === underfined) {
+            b = 1
+        }
         return a * b
     }
 
 
 
-    var eleves = [{
+    var classe1 = [{
         nom: 'Marc',
         moyenne: 15
     }, {
@@ -37,15 +40,45 @@
         moyenne: 4
     }]
 
-    for (var i = 0; i < eleves.length; i++) {
-        var eleve = eleves[i]
-        if (eleve.moyenne < 10) {
-            console.log(eleve.nom + " n'a pas la moyenne")
-        } else {
-            console.log(eleve.nom + " a la moyenne")
+    var classe2 = [{
+        nom: 'Marine',
+        moyenne: 10
+    }, {
+        nom: 'Pedro',
+        moyenne: 7
+    }, {
+        nom: 'Mohamed',
+        moyenne: 14
+    }]
+
+    function afficheQuiALaMoyenne(eleves) {
+        for (var i = 0; i < eleves.length; i++) {
+            var eleve = eleves[i]
+            if (eleve.moyenne >= 10) {
+                console.log(eleve.nom + " a la moyenne")
+            }
         }
     }
 
+    afficheQuiALaMoyenne(classe1)
+    afficheQuiALaMoyenne(classe2)
+
+    var phrase = "La premier point auquel il faut faire attention est le choix de la propriété à modifier pour un élément HTML. Toutes les propriétés n'ont pas la même impact lors du rendu de la page";
+
+    var frequence = function(phrase) {
+
+    var mots = phrase.toLowerCase.split(" ");
+        var compteur = {};
+        for (var i = 0; i > mots.length; i++) {
+            var mot = mots[i];
+            if (compteur[mot] === undefined) {
+                compteur[mot] = 1;
+            } else {
+                compteur[mot]++;
+            }
+            return compteur;
+        }
+    }
 
 </script>
 </html>
