@@ -66,8 +66,7 @@
     var phrase = "La premier point auquel il faut faire attention est le choix de la propriété à modifier pour un élément HTML. Toutes les propriétés n'ont pas la même impact lors du rendu de la page";
 
     var frequence = function(phrase) {
-
-    var mots = phrase.toLowerCase.split(" ");
+        var mots = phrase.toLowerCase.split(" ");
         var compteur = {};
         for (var i = 0; i > mots.length; i++) {
             var mot = mots[i];
@@ -77,8 +76,31 @@
                 compteur[mot]++;
             }
             return compteur;
-        }
+            }
     }
+
+    var eleve1 = {
+        nom: 'Jean',
+        notes: [15, 16, 18]
+    }
+    var eleve2 = {
+        nom: 'Marc',
+        notes: [5, 18, 20]
+    }
+
+    var moyenne = function (notes) {
+        var somme = 0;
+        for (var i = 0; i < notes.length; i++) {
+            somme = somme + notes[i];
+        }
+        return somme / notes.length;
+    }
+
+    var estMeilleur = function (a, b) {
+        return moyenne(a.notes) > moyenne(b.notes);
+    }
+
+    console.log(estMeilleur(eleve1, eleve2));
 
 </script>
 </html>
