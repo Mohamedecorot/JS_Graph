@@ -12,18 +12,41 @@
             var essais = 3;
             var essai = window.prompt('Entrez votre chiffre');
             essai = parseInt(essai, 10);
-            while (essai != aDeviner == essais > 0) {
-                essais --;
-                if (essai > aDeviner) {
-                    alert('Au dessus !');
+            //Premier manière
+            //while (essai != aDeviner == essais > 0) {
+            //    essais --;
+            //    if (essai > aDeviner) {
+            //        alert('Au dessus !');
+            //    } else {
+            //        alert('En dessous');
+            //    }
+            //    if (essais > 0) {
+            //        essai = window.prompt('Retentez votre chance');
+            //    }
+            //}
+            //if (essai == aDeviner) {
+            //    alert('Bravo');
+            //} else {
+            //    alert('Echec');
+            //}
+            //Deuxième manière
+            for( var i = 0; i < 3; i++) {
+                if (i == 0) {
+                    essai = prompt('Entrez votre chiffre');
                 } else {
-                    alert('En dessous');
+                    essai = prompt('Retentez votre chance');
                 }
-                if (essais > 0) {
-                    essai = window.prompt('Retentez votre chance');
+                essai = parseInt(essai, 10);
+                if (essai == aDeviner) {
+                    break;
+                } else if (essai > aDeviner) {
+                    alert('Trop haut');
+                } else {
+                    alert('Trop bas');
                 }
             }
-            if (essai == aDeviner) {
+
+            if(essai == aDeviner) {
                 alert('Bravo');
             } else {
                 alert('Echec');
