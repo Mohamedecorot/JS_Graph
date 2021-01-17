@@ -5,10 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
         .spoiler-content {
-            display: none;
+            display: inline-block;
+            width: 0;
+            height: 0;
+            opacity: 0;
+            overflow: hidden;
+            transition: opacity .5s;
         }
         .spoiler-content.visible {
-            display: block;
+            display: inline;
+            width: auto;
+            height: auto;
+            opacity: 1;
         }
     </style>
     <title>Document</title>
