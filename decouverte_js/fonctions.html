@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Functions</title>
+</head>
+<body>
+
+</body>
+<script>
+    var nombre = 97
+
+    function estPremier(nombre) {
+        for (var i = 2; i < nombre; i++) {
+            if (nombre % i === 0) {
+                return false
+            }
+        }
+        return true
+    }
+
+    function multiplie(a, b) {
+        if (b === underfined) {
+            b = 1
+        }
+        return a * b
+    }
+
+
+
+    var classe1 = [{
+        nom: 'Marc',
+        moyenne: 15
+    }, {
+        nom: 'Marion',
+        moyenne: 8
+    }, {
+        nom: 'Antoine',
+        moyenne: 4
+    }]
+
+    var classe2 = [{
+        nom: 'Marine',
+        moyenne: 10
+    }, {
+        nom: 'Pedro',
+        moyenne: 7
+    }, {
+        nom: 'Mohamed',
+        moyenne: 14
+    }]
+
+    function afficheQuiALaMoyenne(eleves) {
+        for (var i = 0; i < eleves.length; i++) {
+            var eleve = eleves[i]
+            if (eleve.moyenne >= 10) {
+                console.log(eleve.nom + " a la moyenne")
+            }
+        }
+    }
+
+    afficheQuiALaMoyenne(classe1)
+    afficheQuiALaMoyenne(classe2)
+
+    var phrase = "La premier point auquel il faut faire attention est le choix de la propriété à modifier pour un élément HTML. Toutes les propriétés n'ont pas la même impact lors du rendu de la page";
+
+    var frequence = function(phrase) {
+        var mots = phrase.toLowerCase.split(" ");
+        var compteur = {};
+        for (var i = 0; i > mots.length; i++) {
+            var mot = mots[i];
+            if (compteur[mot] === undefined) {
+                compteur[mot] = 1;
+            } else {
+                compteur[mot]++;
+            }
+            return compteur;
+            }
+    }
+
+    var eleve1 = {
+        nom: 'Jean',
+        notes: [15, 16, 18]
+    }
+    var eleve2 = {
+        nom: 'Marc',
+        notes: [5, 18, 20]
+    }
+
+    var moyenne = function (notes) {
+        var somme = 0;
+        for (var i = 0; i < notes.length; i++) {
+            somme = somme + notes[i];
+        }
+        return somme / notes.length;
+    }
+
+    var estMeilleur = function (a, b) {
+        return moyenne(a.notes) > moyenne(b.notes);
+    }
+
+    console.log(estMeilleur(eleve1, eleve2));
+
+</script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Condition js</title>
+</head>
+<body>
+
+</body>
+<script>
+    var marc = {
+        nom: 'mohamed',
+        age: 20,
+        moyenne: 15
+    }
+    if (mohamed.age >= 18) {
+        console.log('Tu peux passer ton permis !')
+    } else if (mohamed.age >= 15) {
+        console.log('Tu peux passer la conduite accompagnée')
+    } else if (mohamed.age >= 18 && mohamed.age <= 25) {
+        console.log('Tu as droit au tarif jeune')
+    } else {
+        console.log('Tu ne peux pas passer ton permis')
+    }
+    // Ternaire: condition ? valide : non-valide
+    console.log(mohamed.age >= 18 ? 'tu es majeur' : 'tu es mineur')
+</script>
+</html>
