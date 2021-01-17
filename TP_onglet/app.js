@@ -1,11 +1,9 @@
-var tabs = document.querySelectorAll('.tabs a');
-for (var i = 0; i < tabs.length; i++) {
-    tabs[i].addEventListener('click', function (e) {
+(function () {
+    var afficherOnglet = function (a) {
+        var li = a.parentNode;
+        var div = a.parentNode.parentNode.parentNode;
 
-        var li = this.parentNode;
-        var div = this.parentNode.parentNode.parentNode;
-
-        if(li.classList.contains('active')) {
+        if (li.classList.contains('active')) {
             return false;
         }
         // On retire la classe active de l'onglet actif
@@ -18,7 +16,20 @@ for (var i = 0; i < tabs.length; i++) {
         div.querySelector('.tab-content.active').classList.remove('active');
 
         // On ajoute la class active sur le contenu correspondant à notre clic
-        div.querySelector(this.getAttribute('href')).classList.add('active');
-    })
+        div.querySelector(a.getAttribute('href')).classList.add('active');
+    }
 
-}
+
+    var tabs = document.querySelectorAll('.tabs a');
+    for (var i = 0; i < tabs.length; i++) {
+        tabs[i].addEventListener('click', function (e) {
+            afficherOnglet(this);
+        })
+
+        var hash = window.location.hash;
+        var a = document.querySelector('a[href="' + hash + '"]');
+        if (a !== null && !a.parentNode.classList.contains('active')) {
+            afficherOnglet(a);
+        }
+    }
+})()
