@@ -7,7 +7,12 @@
         return supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
     }
 
-
+    var element = document.querySelector('.menu');
+    var rect = element.getBoundingClientRect();
+    var top = rect .top + scrollY();
+    var fake = document.createElement('div');
+    fake.style.width = rect.width + "px";
+    fake.style.height = rect.height + "px";
 
     var onScroll = function () {
         var hasScrollClass = element.classList.contains('fixed');
