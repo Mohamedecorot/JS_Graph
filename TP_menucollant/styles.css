@@ -1,4 +1,5 @@
 menu {
+
     background-color: #fff;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
@@ -39,6 +40,7 @@ menu {
 }
 
 .main {
+    padding: 20px;
     float: left;
     width: 75%;
     background-color: #fff;
@@ -48,5 +50,13 @@ menu {
 .sidebar {
     float: right;
     width: 25%;
-    padding: 20px;
+    padding: 0 20px;
+    height: 600px;
+    border: 2px dashed #bababa;
+}
+
+.bloc {
+    padding: 10px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 }
