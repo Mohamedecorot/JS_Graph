@@ -1,5 +1,11 @@
 (function(){
 
+    var scrollY = function () {
+        var supportPageOffset = window.pageXOffset !== undefined;
+        var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
+
+        return supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
+    }
 
     // Variables
     var element = document.querySelector('.menu');
@@ -10,13 +16,6 @@
     fake.style.height = rect.height + "px";
 
     // Fonctions
-
-    var scrollY = function () {
-        var supportPageOffset = window.pageXOffset !== undefined;
-        var isCSS1Compat = ((document.compatMode || "") === "CSS1Compat");
-
-        return supportPageOffset ? window.pageYOffset : isCSS1Compat ? document.documentElement.scrollTop : document.body.scrollTop;
-    }
 
     var onScroll = function () {
         var hasScrollClass = element.classList.contains('fixed');
