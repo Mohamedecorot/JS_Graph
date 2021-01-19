@@ -30,9 +30,8 @@ menu {
     background-color: #EEEEEE;
 }
 
-.fixed {
-    position: fixed;
-    top: 0;
+.sidebar .fixed {
+    opacity: .7;
 }
 
 .content {
@@ -51,6 +50,10 @@ menu {
     float: right;
     width: 25%;
     padding: 0 20px;
+}
+
+.sidebar-container {
+    position: relative;
     height: 600px;
     border: 2px dashed #bababa;
 }
