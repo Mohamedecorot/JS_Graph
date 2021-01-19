@@ -31,3 +31,10 @@ return httpRequest;
 }
 
 var httpRequest = getHttpRequest();
+httpRequest.onreadystatechange = function () {
+    if (httpRequest.readyState === 4) {
+        document.getElementById('result').innerHTML = httpRequest.responseText;
+    }
+}
+httpRequest.open('GET', '/demo.php?city=marseille', true);
+httpRequest.send();
