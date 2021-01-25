@@ -30,11 +30,21 @@ if (!httpRequest) {
 return httpRequest;
 }
 
-var httpRequest = getHttpRequest();
-httpRequest.onreadystatechange = function () {
-    if (httpRequest.readyState === 4) {
-        document.getElementById('result').innerHTML = httpRequest.responseText;
-    }
+var links = document.querySelectorAll('.meteo');
+var result = document.getElementById('result');
+for(var i = 0; i < links.length; i++) {
+    var link = links[i];
+    link.addEventListener('click', function (e) {
+        e.preventDefault();
+        result.innerHTML = 'Chargement...';
+        var httpRequest = getHttpRequest();
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState === 4) {
+                result.innerHTML = httpRequest.responseText;
+            }
+        }
+        httpRequest.open('GET', this.getAttribute('href'), true);
+        httpRequest.send();
+    })
 }
-httpRequest.open('GET', '/demo.php?city=marseille', true);
-httpRequest.send();
+
