@@ -42,22 +42,32 @@ for(var i = 0; i < links.length; i++) {
             if (httpRequest.readyState === 4) {
                 result.innerHTML = '';
                 if (httpRequest.status === 200 ) {
-                    var result = JSON.parse(httpRequest.responseText);
-                    var ul = document.createElement('ul');
-                    result.appendChild(ul);
-                    for (var i = 0; i < result.length; i++) {
-                        var li = document.createElement('li');
-                        li.innerHTML =result[i].name;
-                        ul.appendChild(li);
-                    }
+                    // var result = JSON.parse(httpRequest.responseText);
+                    // var ul = document.createElement('ul');
+                    // result.appendChild(ul);
+                    // for (var i = 0; i < result.length; i++) {
+                    //     var li = document.createElement('li');
+                    //     li.innerHTML =result[i].name;
+                    //     ul.appendChild(li);
+                    //}
+                result.innerHTML = httpRequest.responseText;
+
                 } else {
                     alert('Impossible de contacter le serveur');
                 }
 
             }
         }
-        httpRequest.open('GET', 'http://jsonplaceholder.typicode.com/users', true);
-        httpRequest.send();
+        //httpRequest.open('GET', 'http://jsonplaceholder.typicode.com/users', true);
+
+    //     httpRequest.open('POST', '/demo.php', true);
+    //     httpRequest.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    //     httpRequest.send("city=marseille&nom=mohamed");
+
+    var data = new FormData();
+    data.append('city', 'aze&aze=azeae');
+    data.append('name', 'marie');
+    httpRequest.send(data);
     })
 }
 
