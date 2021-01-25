@@ -40,10 +40,23 @@ for(var i = 0; i < links.length; i++) {
         var httpRequest = getHttpRequest();
         httpRequest.onreadystatechange = function () {
             if (httpRequest.readyState === 4) {
-                result.innerHTML = httpRequest.responseText;
+                result.innerHTML = '';
+                if (httpRequest.status === 200 ) {
+                    var result = JSON.parse(httpRequest.responseText);
+                    var ul = document.createElement('ul');
+                    result.appendChild(ul);
+                    for (var i = 0; i < result.length; i++) {
+                        var li = document.createElement('li');
+                        li.innerHTML =result[i].name;
+                        ul.appendChild(li);
+                    }
+                } else {
+                    alert('Impossible de contacter le serveur');
+                }
+
             }
         }
-        httpRequest.open('GET', this.getAttribute('href'), true);
+        httpRequest.open('GET', 'http://jsonplaceholder.typicode.com/users', true);
         httpRequest.send();
     })
 }
