@@ -51,3 +51,21 @@ body {
 .items {
     position: relative;
 }
+
+/**
+CAROUSEL
+*/
+
+.carousel {
+    position: relative;
+}
+
+.carousel__container::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+.carousel__item {
+    float: left;
+}
