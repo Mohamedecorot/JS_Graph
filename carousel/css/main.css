@@ -28,13 +28,17 @@ body {
 }
 
 .item:hover {
-    transform: translate3d(à, -10px, 0);
+    transform: translate3d(0, -10px, 0);
 }
 
 .item img {
     display: block;
     width: 100%;
     height: auto;
+}
+
+.item__body {
+    padding: 25px;
 }
 
 .item__title {

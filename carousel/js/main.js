@@ -7,7 +7,7 @@ class Carousel {
      * @param {Object} options.slidesVisible Nombre d'éléments visible dans un slide
      * @param {boolean} options.loop Doit-on boucler en fin de carousel
      */
-    constructor (element, option = {}) {
+    constructor (element, options = {}) {
         this.element = element
         this.options = Object.assign({}, {
             slidesToScroll: 1,
@@ -20,7 +20,7 @@ class Carousel {
         $this.container = this.createDivWithClass('carousel__container')
         this.root.appendChild($this.container)
         this.element.appendChild(this.root)
-        $this.items = children.map((child) => {
+        this.items = children.map((child) => {
             let item = this.createDivWithClass('carousel__item')
             item.appendChild(child)
             $this.container.appendChild(item)
