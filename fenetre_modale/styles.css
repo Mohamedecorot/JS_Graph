@@ -19,7 +19,7 @@ body, html {
     width: 100%;
     height: 100%;
     background: rgba(0, 0, 0, 0.8);
-    animation: fadeIn 2s both;
+    animation: fadeIn .3s both;
 }
 
 .modal-wrapper {
