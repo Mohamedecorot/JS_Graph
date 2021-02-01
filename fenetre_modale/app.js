@@ -21,13 +21,17 @@ const closeModal = function (e) {
     if (modal === null) return
     if (previouslyFocusedElement !== null) previouslyFocusedElement.focus()
     e.preventDefault()
-    modal.style.display = "none"
     modal.setAttribute('aria-hidden', 'true')
     modal.removeAttribute('aria-modal')
     modal.removeEventListener('click', closeModal)
     modal.querySelector('.js-modal-close').removeEventListener('click', closeModal)
     modal.querySelector('.js-modal-stop').removeEventListener('click', stopPropagation)
-    modal = null
+    const hideModal = function () {
+        modal.style.display = "none"
+        modal.removeEventListener('animationend', hideModal)
+        modal = null
+    }
+    modal.addEventListener('animationend', hideModal)
 }
 
 const focusModal = function (e) {
