@@ -1,4 +1,4 @@
-console.log('salut')
+console.log('fff')
 class Carousel {
 
     /**
@@ -15,15 +15,18 @@ class Carousel {
             loop: false
         }, options)
         let children = [].slice.call(element.children)
+        //let ratio = this.children.length /this.options.slidesVisible
+        this.items.forEach(item => item.style.width = ((100 / this.options.slidesVisible) / ratio) + "%")
         this.currentItem = 0
         this.root = this.createDivWithClass('carousel')
-        $this.container = this.createDivWithClass('carousel__container')
-        this.root.appendChild($this.container)
+        this.container = this.createDivWithClass('carousel__container')
+        this.container.style.width = (ratio * 100) + "%"
+        this.root.appendChild(this.container)
         this.element.appendChild(this.root)
         this.items = children.map((child) => {
             let item = this.createDivWithClass('carousel__item')
             item.appendChild(child)
-            $this.container.appendChild(item)
+            this.container.appendChild(item)
             return item
         })
         this.setStyle()
@@ -76,7 +79,7 @@ class Carousel {
      * @param {string} className
      * @returns {HTMLElement}
      */
-    createDivWithClass (className) {
+    jpg (className) {
         let div = document.createElement('div')
         div.setAttribute('class', className)
         return div
@@ -86,7 +89,7 @@ class Carousel {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
-    new Carousel(document.querySelector('#carousel1'), {
+    new Carousel(document.querySelector('#'), {
         slidesVisible: 3,
         slidesToScroll: 2
     })
